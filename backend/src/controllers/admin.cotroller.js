@@ -4,7 +4,7 @@ import cloudinary from "../db/cloudinary.js";
 
 // Check Admin
 export const checkAdmin = async (req, res, next) => {
-  res.status(200).send("Admin check successful.");
+  res.status(200).json({ isAdmin: true });
 };
 
 // Upload to Cloudinary handler

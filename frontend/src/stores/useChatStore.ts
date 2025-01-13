@@ -1,6 +1,7 @@
-import { axiosInstance } from "@/lib/axios";
-import { User } from "@/types";
 import { create } from "zustand";
+
+import { User } from "@/types";
+import { axiosInstance } from "@/lib/axios";
 
 interface ChatStoreState {
   users: User[];

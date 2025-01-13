@@ -1,12 +1,13 @@
-import PlaylistSkeleton from "@/components/skeletons/PlayListSkeleton";
-import { buttonVariants } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { HomeIcon, Library, MessageCircle } from "lucide-react";
+import { SignedIn } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 import { cn } from "@/lib/utils";
 import { useMusicStore } from "@/stores/useMusicStore";
-import { SignedIn } from "@clerk/clerk-react";
-import { HomeIcon, Library, MessageCircle } from "lucide-react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { buttonVariants } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import PlaylistSkeleton from "@/components/skeletons/PlayListSkeleton";
 
 const LeftSidebar = () => {
   const { isLoading, albums, fetchAlbums } = useMusicStore();
@@ -63,7 +64,7 @@ const LeftSidebar = () => {
           </div>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-300px)]">
+        <ScrollArea className="h-[300px] w-[350px]">
           <div className="space-y-2">
             {isLoading ? (
               <PlaylistSkeleton />
@@ -90,6 +91,7 @@ const LeftSidebar = () => {
               ))
             )}
           </div>
+          <ScrollBar />
         </ScrollArea>
       </div>
     </div>
